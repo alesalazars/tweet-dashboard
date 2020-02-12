@@ -2,31 +2,46 @@ import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+// function Phrase(){
+//   const [count, setCount] = useState(0);
+
+//   return (
+//     <div>
+//       <p>El numero ahora es {count}</p>
+//       <button onClick={() => {setCount(count + 1)}}>
+//         Sube
+//       </button>
+//       <button onClick={() => {setCount(count - 1)}}>
+//         Baja
+//       </button>
+//     </div>
+//   )
+// }
+
+
 function Phrase(){
   const [count, setCount] = useState(0);
 
   return (
-    <p>El numero ahora es {count}</p>
-    <Increment suma = {setCount(count + 1)}/>
-    <Decrement resta = {setCount(count - 1)}/>
+    <div>
+      <p>El numero ahora es {count}</p>
+      <Button text={'Suma'} operation={() => {setCount(count + 1)}}/>
+      <Button text={'Resta'} operation={() => {setCount(count - 1)}}/>
+    </div>
   )
 }
 
-function Increment(suma){
+function Button(el){
   return (
-    <button onClick={() => {suma}}>
-      Sube
-    </button>
+    <div>
+      <button onClick={el.operation}>
+        {el.text}
+      </button>
+    </div>
   )
 }
 
-function Decrement(resta){
-  return (
-    <button onClick={() => {resta}}>
-      Baja
-    </button>
-  )
-}
+
 
 
 function App() {
@@ -43,7 +58,7 @@ function App() {
         >
           Learn React
         </a>
-        <Example/>
+        <Phrase/>
       </header>
     </div>
   );
