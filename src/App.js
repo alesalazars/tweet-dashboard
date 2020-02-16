@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import Phrase from './components/phrase';
 
-var listOfEvens = []
+
 
 function Button(props){
   return (
@@ -28,7 +28,7 @@ function App() {
         >
           Learn React
         </a>
-        <Phrase showEvens={listOfEvens}/>
+        <Phrase/>
       </header>
     </div>
   );
